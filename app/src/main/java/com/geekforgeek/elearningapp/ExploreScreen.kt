@@ -8,70 +8,71 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.lazy.grid.GridCells
-import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
-import androidx.compose.foundation.lazy.grid.items
 import androidx.compose.foundation.lazy.staggeredgrid.LazyVerticalStaggeredGrid
 import androidx.compose.foundation.lazy.staggeredgrid.StaggeredGridCells
 import androidx.compose.foundation.lazy.staggeredgrid.items
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
+import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.geekforgeek.elearningapp.model.ExploreModel
 
 @Composable
 fun ExploreScreen() {
 
-    val exploreList = arrayListOf<ExploreModel>()
-    exploreList.add(
-        ExploreModel(
-            "DSA course",
-            "Python, Java, ML",
-            listOf(
-                Color(0xffC6FFDD),
-                Color(0xffFBD786),
-                Color(0xfff7797d)
-            )
-        )
-    )
-    exploreList.add(
-        ExploreModel(
-            "DSA course is Good Nice",
-            "Python, Java, ML",
-            listOf(
-                Color(0xffC6FFDD),
-                Color(0xffFBD786),
-                Color(0xfff7797d)
-            )
-        )
-    )
-    exploreList.add(
-        ExploreModel(
-            "Computer Programming course is Great Course",
-            "Python, Java, ML",
-            listOf(
-                Color(0xffC6FFDD),
-                Color(0xffFBD786),
-                Color(0xfff7797d)
-            )
-        )
-    )
-    exploreList.add(
-        ExploreModel(
-            "DSA course",
-            "Python, Java, ML",
-            listOf(
-                Color(0xffC6FFDD),
-                Color(0xffFBD786),
-                Color(0xfff7797d)
-            )
-        )
-    )
+    val homeScreenData = CourseRepo().getJsonData(LocalContext.current)
+    val exploreList = CourseRepo().getExploreData(homeScreenData)
+//    exploreList.add(
+//        ExploreModel(
+//            "DSA course",
+//            "Python, Java, ML",
+//            listOf(
+//                Color(0xffC6FFDD),
+//                Color(0xffFBD786),
+//                Color(0xfff7797d)
+//            )
+//        )
+//    )
+//    exploreList.add(
+//        ExploreModel(
+//            "DSA course is Good Nice",
+//            "Python, Java, ML",
+//            listOf(
+//                Color(0xffC6FFDD),
+//                Color(0xffFBD786),
+//                Color(0xfff7797d)
+//            )
+//        )
+//    )
+//    exploreList.add(
+//        ExploreModel(
+//            "Computer Programming course is Great Course",
+//            "Python, Java, ML",
+//            listOf(
+//                Color(0xffC6FFDD),
+//                Color(0xffFBD786),
+//                Color(0xfff7797d)
+//            )
+//        )
+//    )
+//    exploreList.add(
+//        ExploreModel(
+//            "DSA course",
+//            "Python, Java, ML",
+//            listOf(
+//                Color(0xffC6FFDD),
+//                Color(0xffFBD786),
+//                Color(0xfff7797d)
+//            )
+//        )
+//    )
 
     Column {
 

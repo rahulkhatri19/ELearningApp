@@ -1,4 +1,4 @@
-package com.geekforgeek.elearningapp
+package com.geekforgeek.elearningapp.model
 
 import androidx.compose.ui.graphics.Color
 
